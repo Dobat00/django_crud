@@ -1,0 +1,9 @@
+{{pessoa.id}} {{pessoa.nome}} {{pessoa.idade}}
+<form method="POST" action = {%url 'editarPOST' pessoa.id%}>
+  {% csrf_token%}
+  <label>nome</label>
+  <input placeholder='ex: matheus' name='nome' value={{pessoa.nome}}>
+  <label>idade</label>
+  <input placegolder='ex: 22'name='idade' value={{pessoa.idade}}>
+  <input type='submit'>
+</form>

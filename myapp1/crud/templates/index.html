@@ -1,0 +1,14 @@
+<h1>IDX</h1>
+<a href='/admin'>admin</a>
+{%for pessoa in pessoas%}
+<p>{{pessoa.nome}} {{pessoa.idade}}</p><a href={% url 'editar' pessoa.id%}>editar</a><a href={%url 'delete' pessoa.id%}>deletar</a>
+{%endfor%}
+
+<form method="POST" action = {%url 'salvar'%}>
+  {% csrf_token%}
+  <label>nome</label>
+  <input placeholder='ex: matheus' name='nome'>
+  <label>idade</label>
+  <input placegolder='ex: 22'name='idade'>
+  <input type='submit'>
+</form>
